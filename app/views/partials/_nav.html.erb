@@ -6,7 +6,7 @@
 
 <%= link_to "Cities", cities_path %>
 
-<%= link_to "Edit Profile", edit_user_path%>
+<%= link_to "Edit Profile", edit_user_path(current_user)%>
 
 <%= link_to "Logout", sessions_path, method: :delete %>
 <% else %>
