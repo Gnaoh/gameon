@@ -1,7 +1,26 @@
-<h1> Cities </h1>
-<%@cities.each do |city| %>
-	<div>
-		<span><%= link_to city.name, city_path(city)%></span><br>
-	</div>
-
+<br>
+<% content_for :head do %>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
 <%end%>
+<div class="container">
+<div id="map-container">
+  <div id="map-canvas"></div>
+</div>
+</div>
+<div class="container">
+	<div class="main row">
+ 	<h2 class="style">Cities</h2>
+	 	<div class="grids_of_4 row">
+	 	 	<% @cities.each do |city|%>
+				<div class="col-md-3 images_1_of_4">
+					<div class="fancyDemo">
+						<a><%= link_to image_tag(city.image_url, :class => "img-responsive"), city.id.to_s%></a>
+					</div>
+					 <h3><a><%=link_to city.name , city_path(city)%></a></h3>
+					
+				</div>
+			<%end%>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 	
 	belongs_to :cities
 
+	
 	has_many :attendings
 	has_many :events, through: :attendings
 
