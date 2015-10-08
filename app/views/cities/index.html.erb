@@ -1,12 +1,9 @@
-<script type="text/javascript">
-	getMapCitiesIndex();
-	var cityNamesArr = "<%=@city_names%>";
-	citiesLntLng(cityNamesArr);
-	console.log ("array of cities", cityNamesArr);
-	// markerPush(cityNamesArr);
-</script>
-<div id="map-canvas"></div>
+
 <div class="container">
+<div id="map-container">
+<div id='map-canvas'></div>
+</div>
+</div>
 	<div class="main row">
 	 	<h2 class="style">Cities</h2>
 		 	<div class="grids_of_4 row">
@@ -23,4 +20,19 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+	var map_config = {
+						center: {
+							lat: 37.09,
+							lng: -95.71
+						}, 
+						zoom: 4
+					 }
+	makeMap('map-canvas', map_config);
+	var cityNamesArr = <%= raw @city_names
+	 %>;
+	citiesLntLng(cityNamesArr);
+	console.log ("array of cities", cityNamesArr);
+	// markerPush(cityNamesArr);
+</script>
 
