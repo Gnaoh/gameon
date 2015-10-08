@@ -1,9 +1,25 @@
-.eventshow-map-container {
-	height: 150px;
+#event-container {
+   height: 150px;
    border-radius: 16px 16px;
    border-color: #fff;
    border-style: solid;
    box-shadow: 2px 2px 10px #B1B1B1;
+   margin-bottom: 25px;
+   border-width: 7px;
+ }
+ 
+ #event-map {
+   height: 384px;
+   width: 100%;
+ }
+
+#event-container #event-map img {
+  max-width: none;
+}
+
+/* Bootstrap Css Map Fix*/
+#event-container #event-map label {
+  width: auto; display:inline;
    margin-top: 25px;
    margin-right: 20px;
    margin-left: 20px;

@@ -1,5 +1,9 @@
 <script type="text/javascript">
 	getMapCitiesIndex();
+	var cityNamesArr = "<%=@city_names%>";
+	citiesLntLng(cityNamesArr);
+	console.log ("array of cities", cityNamesArr);
+	// markerPush(cityNamesArr);
 </script>
 <div id="map-canvas"></div>
 <div class="container">
@@ -18,4 +22,5 @@
 			</div>
 	</div>
 </div>
+
 

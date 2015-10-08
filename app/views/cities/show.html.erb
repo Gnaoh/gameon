@@ -1,14 +1,11 @@
 <script type="text/javascript">
-renderMap();
-</script>
+  var city = "<%=@city_name%>";
+	renderMap(city);
+ </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHLett8djBo62dDXj0EjCimF8Rd6E8cxg"></script>
 
 <div id="city-map"></div>
 <div class="container">
-  <div>
-   <h1 class='act-loc'><%= @city.name%></h1>
-  </div>
   <div class="text-right">
     <%= link_to " Create New Activity", city_event_new_path(@city), :class => "fa fa-plus " %>
   </div>

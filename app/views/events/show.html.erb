@@ -1,15 +1,15 @@
 <!-- call functions that displays map -->
 <script type="text/javascript">
-  renderMap();
+  var eventLoc = "<%=@city_name%>";
+  renderMap(eventLoc);
 </script>
-<div class="page-container">
-	<span class='act-loc'><%=@city_name %></span>
 <!-- Displays map -->
 <div class="container">
-	<div id="eventshow-map-container">
-  		<div id="eventshow-city-map"></div>
-	</div>
+<div id="event-container">
+  <div id="event-map"></div>
 </div>
+</div>
+
 <div>
 	<h1 class="overflow h3 space-1 text-center"><%=@event.sport.name%>: <%=@event.name %></h1>
 	<h5 class="space-2 text-muted text-center"><%= @event.address %> (<%= @event.city.name %>)</h5>
@@ -73,10 +73,8 @@
  	<span class="links"><%= link_to 'Back', city_path(@event.city_id) %></span>
 </p>
 <% if (current_user.id != @creator.id) && @available.exists?(current_user.id)%>
+
 <%= button_to "Leave Event", remove_attending_path(@event), method: :patch %>
 <% end %>
 
  
-
- 
-
