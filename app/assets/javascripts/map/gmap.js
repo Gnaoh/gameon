@@ -3,6 +3,9 @@ var markers = [];
 var LatLng = { lat: 37.09, lng: -95.71};
 var ltlg;
 var arrayOfCities = [];
+//var for autocomplete
+var placeSearch;
+var autocomplete;
 
 $( document ).ready(function() {
 	$(".player").YTPlayer();
@@ -15,7 +18,7 @@ $( document ).ready(function() {
 		ltlg = data.results[0].geometry.location;
 
      //function below needs to be called at the end of callback function
-		MakeCityEventMap(ltlg,htmlTag);
+		MakeCityEventMap(ltlg, htmlTag);
 
 		});
 	}
@@ -23,8 +26,10 @@ $( document ).ready(function() {
  	function MakeCityEventMap(point, idHTMLtag){
  		map = new google.maps.Map(document.getElementById(idHTMLtag), {
  			center: point,
- 			zoom:10
+ 			zoom:14
+
  		});
+ 		markerPush(point)
  	}
 
 	function makeMap(selector, config) {
@@ -94,5 +99,37 @@ $( document ).ready(function() {
 // 		console.log (markers);
 // 	});
 // };
+var defaultBounds; 
+defaultBounds = new google.maps.LatLngBounds(
+new google.maps.LatLng(71.3867745,-66.9502861),
+new google.maps.LatLng(18.9110642,172.4458955));
 
+var options = {
+	bounds: defaultBounds
+};
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')), options);
+
+}
+
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+// function geolocate() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(function(position) {
+//       var geolocation = {
+//         lat: position.coords.latitude,
+//         lng: position.coords.longitude
+//       };
+//       var circle = new google.maps.Circle({
+//         center: geolocation,
+//         radius: position.coords.accuracy
+//       });
+//       autocomplete.setBounds(circle.getBounds());
+//     });
+//   }
+// }
 

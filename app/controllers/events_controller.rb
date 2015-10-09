@@ -20,7 +20,7 @@ class EventsController < ApplicationController
     @available = @event.users.all
     @city = City.find(@event.city_id)
     id = params[:id]
-    #@event_log = Log.top_six_most_recent_logs
+    @address = @event[:address]
     render :show
   end
 

@@ -32,7 +32,10 @@
         <% end %>
 </div>
 <script type="text/javascript">
-  var city = '<%= @city.name %>';
-	renderMap(city,'city-map');
+  var city = "<%=@city.name%>";
+  renderMap(city, "city-map");
+  
+  var cityEvents = <%= raw @e_markers %>;
+  citiesLntLng(cityEvents);
  </script>
 

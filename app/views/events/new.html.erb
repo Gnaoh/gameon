@@ -19,7 +19,7 @@
             	<% end %>
             <% end %>
               <%= f.text_field :name, :placeholder => "Name of Event", :class => "form-control" %><br>         
-              <%= f.text_field :address, :placeholder => "Location(Address)", :class => "form-control" %><br>
+              <%= f.text_field :address, :placeholder => "Location(Address)", :class => "form-control", :id => "autocomplete" %><br>
               <%= f.text_field :max_headcount, :placeholder => "Total number of players", :class => "form-control" %><br>
               <%= f.text_field :current_headcount, :placeholder => "Current number of players", :class => "form-control" %><br>
                <%=f.select :sport_id, [["Tennis",1], ["Basketball", 2], ["Rockclimbing",3], ["Other",4]], :prompt => "Select Activity", :class => "form-control", :class => "form-control" %>
@@ -33,3 +33,6 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+initAutocomplete();
+</script>
