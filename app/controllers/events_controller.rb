@@ -26,6 +26,7 @@ class EventsController < ApplicationController
 
   def create
     @user = current_user
+    #NOTE: refactor into a `private` method
     event_params = params.require(:event).permit(:name, :address, :max_headcount, :current_headcount, :description, :date, :time, :sport_id)
     event_params[:user_id] = @user.id
     event_params[:city_id] = params[:id]
@@ -51,6 +52,7 @@ class EventsController < ApplicationController
     @event = Event.find(event_id)
     @user = current_user
 
+    #NOTE: refactor into a `private` method
     #get updated data
     updated_attributes = params.require(:event).permit(:name, :address, :max_headcount, :current_headcount, :description, :date, :time, :sport_id)
     #update the article 

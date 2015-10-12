@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
  	@user = User.confirm(user_params)
  	if @user
  		login(@user)
+    #NOTE: prefer `*_path` syntax
  		redirect_to "/users/#{@user.id}"
  	else
  		redirect_to "/sessions/new"

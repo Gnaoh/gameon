@@ -1,3 +1,5 @@
+#NOTE: the below lines could be refactored by using an array of city names and an iterator to create a City for each one.
+
 City.create( name: "Austin")
 City.create( name: "Columbus")
 City.create( name: "Charlotte")

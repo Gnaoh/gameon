@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #NOTE: nice use of authorization
   before_action :logged_in?, only: [:show, :index]
   
 def index
@@ -23,16 +24,19 @@ def index
 
   def show
     @user = User.find(params[:id])
-     if !@user.events.empty?
+
+      #NOTE: consider refactoring into a ternary
+      #NOTE: consider using `.any?` instead of `! ... .empty?`
+      if !@user.events.empty?
        @events = @user.events
-     else 
+      else 
        @events = []
-      
-     end
-     
-     if (@user.attributes['city_id'] && !@user.events.blank?)
+
+      end
+
+      if (@user.attributes['city_id'] && !@user.events.blank?)
       @local = @user.city.events.where(sport_id: @events.last.sport_id)
-     end
+      end
     # @similar = @local.where
     # @words = @
     @is_creator = Event.where(user_id: @user.id)
