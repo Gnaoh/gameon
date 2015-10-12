@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
     user.try(:authenticate, params[:password])
   end
 
+  #NOTE: Great set of instance methods below!
+
   def created_events
   	@created_events = Event.where(user_id: id)
   end

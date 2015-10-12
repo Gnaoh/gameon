@@ -1,3 +1,4 @@
+  <% #NOTE: this view looks a lot like `new.html.erb`, consider creating a partials that both files reference %>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-body">
@@ -8,6 +9,7 @@
         <div class="form-controls">
           <div class="line-form-separator"></div>
           <div class="form-group">
+          <% #NOTE: Very nice error messaging to the user %>
           <%= form_for @event do  |f| %>
           	<% if @event.errors.any? %>
               <div id="error_explanation">
@@ -22,6 +24,7 @@
               <%= f.text_field :address, :placeholder => "Location(Address)", :class => "form-control" %><br>
               <%= f.text_field :max_headcount, :placeholder => "Total number of players", :class => "form-control" %><br>
               <%= f.text_field :current_headcount, :placeholder => "Current number of players", :class => "form-control" %><br>
+              <% #NOTE: avoid database called from the view, aka `Sport.all` %>
                <%=f.collection_select(:sport_id, Sport.all, :id, :name, :prompt => "Select Activity", :class => "form-control", :class => "form-control" )%>
               <%= f.date_select :date, :order => [:month, :day, :year], :class => "form-control"%>
               <%= f.time_select :time, :ampm => true, :minute_step => 15, :class => "form-control" %><br><br>

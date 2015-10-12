@@ -15,6 +15,7 @@
 		</div>
 		<div class="col-xs-2 col-sm-2 col-md-2" >
 			<i class="fa fa-calendar fa-2x"></i>
+				<% #NOTE: Nice implementation of displaying the time clearly to a user %>
 				<p>Date: <br><%= @event.date.strftime("%b %d, %Y")%></p>
 		</div>
 		<div class="col-xs-2 col-sm-2 col-md-2" >
@@ -72,6 +73,7 @@
 </div>
 <!-- call functions that displays map -->
 <script type="text/javascript">
+ <% #NOTE: Great job abstracting the view logic to a `.js` file and simply calling on predefined functions in the view. %>
   var eventPlace = '<%= @event.address %>';
   renderMap(eventPlace,'event-map');
 </script>
