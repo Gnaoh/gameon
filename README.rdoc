@@ -1,28 +1,153 @@
-== README
+Gameon README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+About/elevator pitch:
 
-Things you may want to cover:
+Gameon is a location-based website app that allows users to find activity buddies for a wide range of activities, such as rock climbing, tennis and basketball etc. 
 
-* Ruby version
+User Story:
+Sprint 1: Basic Auth & Profiles
+A user should be able to ...
+1.	go to “/” and see a basic splash page and see...
+o	the name of the website, and (done)
+o	links to “login” and “signup” (done)
+2.	sign up for an account – add all parameters 
+3.	log in to their account if they already have one
+4.	be redirected to their public profile view after logging in
+5.	on their public profile, see their name, the current city, gender, activities
+6.	On site header, have a link on every page that direct to user profile (called “my activities”)*
+7.	see the site header on every page, and (partials)
+o	on the header, see a link to log out if they’re logged in
+o	on the header, see links to log in and sign up if they’re logged out
+8.	update their profile
+o	change their activities (Delete/edit) and current city only
+9.	see all of their current event
+10.	view individual event with author, title, and body
+Bonuses
+A user should be able to...
+1.	see a “default” profile-photo on their profile page before adding their own photo
+2.	update their photo (consider using Paperclip)
+3.	see their photo next to their posts
+Sprint 2: CRUD – Event creation / edit
+A user should be able to...
+1.	view the homepage (at “/cities/1”)
+o	including the site-header
+o	and the name of the city
+2.	view a list of events on the San Francisco Homepage
+o	sorted by newest first
+o	link the title to the post
+3.	use a “Add” button on the home page to pull up the new event form
+4.	create a new event 
+5.	Be able to specify time, location, type of activity and headcount of event
+6.	click “edit” on ANY individual event the user created, and be redirected to the edit form
+7.	click “delete” on ANY individual event, then
+o	see a pop-up that says: “Are you sure you want to delete this request?”
+o	if the user confirms, delete the event
+8.	Able to see the list of activities you joined
 
-* System dependencies
+Sprint 3: CRUD – Event Joining and Updating
+A user should be able to...
+1.	click join event
+2.	See confirmation message of event joined
+a.	Description, location
+b.	Current headcount, and desired headcount
+c.	List of participants and their levels
+3.	Sees current headcount increment by one once joined
+4.	Redirect back to home page once close the confirmation page 
+Sprin4 : Validations & Authorization
+A user should be able to...
+1.	view home pages for “San Francisco ”posts
+2.	view all events as markers/pins on a map on the site's main page
+3.	click on a pin on the main page map and be redirected to the corresponding event
+4.	verify that a new post they create is successfully published on the correct city homepage
+A user CANNOT save invalid data to the database, according to the following rules:
+1.	A user CANNOT sign up with an email (or username) that is already in use
+2.	A event title must be between 1 and 200 characters
+A user is authorized to perform certain actions on the site, according to the following rules:
+1.	A user MUST be logged in to create/update/destroy resources
+2.	A user may only edit/delete their OWN event
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 
-Please feel free to use a different markup language if you do not plan to run
+ Entity Relationship Diagram
+
+I) User
+- First Name
+- Last Name
+- Email
+- Password
+- has many
+ 	- Sport-type
+- City_ID
+
+II) Event
+- Creator: user_id
+- Sport Type_id
+- Location
+- Start Time
+- Date: 
+- Max headcount
+- Current Headcount
+- Description
+- City_id
+- has_many: users
+
+
+III) City
+- Name: 
+- has_many
+ 	- users
+           - events
+
+
+
+IV) Sport type
+- Name: String
+- Level: String
+
+- belongs_to: 
+ 	- Event
+ 	- User
+
+
+V) Logs
+- joint table: belongs to User and Events
+- data fields: 
+ 	- User_id: int
+	- Event_id: int
+	- Action: string
+
+API Used:
+- Google map - API 
+
+Libraries used: 
+- JQUERY
+- Boostrap
+
+Wishlist / Future Development: 
+- Ability to flag previous activity partners
+- Friends/sharing:
+	- ability to add friends, and only see friend's activity request
+ 	- restrict activity request to inviting friends only
+	- share URL of activity request via facebook or email with friends not signed up
+	- invite friends to join site / log in via facebook
+- Request administrator previleges 
+	- originator of request can approve or deny quests to join from other users
+	- originator of request can remove other participants
+- Notification to users when request is filled/cancelled
+	- email notification  
+	- ability to change notification settings
+- Interaction with other Users with chat
+	- sending chats to friends / administors of requests 
+	- delete messsages in inbox
+	- receive notification when a message comes in
+- Sorting activities by location, time and type
+
+Contributors: 
+Peter Hoang: https://github.com/Gnaoh
+Sharon Ji: https://github.com/SJ-2015
+James Bennington: https://github.com/jkbennington
+Humberto Calero: https://github.com/altairn5
+
+
+
 <tt>rake doc:app</tt>.

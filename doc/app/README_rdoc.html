@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>README - Rails Application Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.rdoc">
+
+<p>Gameon <a href="README_rdoc.html">README</a></p>
+
+<p>About/elevator pitch:</p>
+
+<p>Gameon is a location-based website app that allows users to find activity
+buddies for a wide range of activities, such as rock climbing, tennis and
+basketball etc.</p>
+
+<p><a href="User.html">User</a> Story: Sprint 1: Basic Auth &amp; Profiles A
+user should be able to …</p>
+<ol><li>
+<p>go to “/” and see a basic splash page and see…</p>
+</li></ol>
+
+<p>o       the name of the website, and (done) o       links to “login” and
+“signup” (done)</p>
+<ol><li>
+<p>sign up for an account – add all parameters</p>
+</li><li>
+<p>log in to their account if they already have one</p>
+</li><li>
+<p>be redirected to their public profile view after logging in</p>
+</li><li>
+<p>on their public profile, see their name, the current city, gender,
+activities</p>
+</li><li>
+<p>On site header, have a link on every page that direct to user profile
+(called “my activities”)*</p>
+</li><li>
+<p>see the site header on every page, and (partials)</p>
+</li></ol>
+
+<p>o       on the header, see a link to log out if they’re logged in o      
+on the header, see links to log in and sign up if they’re logged out</p>
+<ol><li>
+<p>update their profile</p>
+</li></ol>
+
+<p>o       change their activities (Delete/edit) and current city only</p>
+<ol><li>
+<p>see all of their current event</p>
+</li><li>
+<p>view individual event with author, title, and body</p>
+</li></ol>
+
+<p>Bonuses A user should be able to…</p>
+<ol><li>
+<p>see a “default” profile-photo on their profile page before adding their own
+photo</p>
+</li><li>
+<p>update their photo (consider using Paperclip)</p>
+</li><li>
+<p>see their photo next to their posts</p>
+</li></ol>
+
+<p>Sprint 2: CRUD – <a href="Event.html">Event</a> creation / edit A user
+should be able to…</p>
+<ol><li>
+<p>view the homepage (at “/cities/1”)</p>
+</li></ol>
+
+<p>o       including the site-header o       and the name of the city</p>
+<ol><li>
+<p>view a list of events on the San Francisco Homepage</p>
+</li></ol>
+
+<p>o       sorted by newest first o       link the title to the post</p>
+<ol><li>
+<p>use a “Add” button on the home page to pull up the new event form</p>
+</li><li>
+<p>create a new event</p>
+</li><li>
+<p>Be able to specify time, location, type of activity and headcount of event</p>
+</li><li>
+<p>click “edit” on ANY individual event the user created, and be redirected to
+the edit form</p>
+</li><li>
+<p>click “delete” on ANY individual event, then</p>
+</li></ol>
+
+<p>o       see a pop-up that says: “Are you sure you want to delete this
+request?” o       if the user confirms, delete the event</p>
+<ol><li>
+<p>Able to see the list of activities you joined</p>
+</li></ol>
+
+<p>Sprint 3: CRUD – <a href="Event.html">Event</a> Joining and Updating A user
+should be able to…</p>
+<ol><li>
+<p>click join event</p>
+</li><li>
+<p>See confirmation message of event joined</p>
+</li></ol>
+<ol style="list-style-type: lower-alpha"><li>
+<p>Description, location</p>
+</li><li>
+<p>Current headcount, and desired headcount</p>
+</li><li>
+<p>List of participants and their levels</p>
+</li></ol>
+<ol><li>
+<p>Sees current headcount increment by one once joined</p>
+</li><li>
+<p>Redirect back to home page once close the confirmation page</p>
+</li></ol>
+
+<p>Sprin4 : Validations &amp; Authorization A user should be able to…</p>
+<ol><li>
+<p>view home pages for “San Francisco ”posts</p>
+</li><li>
+<p>view all events as markers/pins on a map on the site&#39;s main page</p>
+</li><li>
+<p>click on a pin on the main page map and be redirected to the corresponding
+event</p>
+</li><li>
+<p>verify that a new post they create is successfully published on the correct
+city homepage</p>
+</li></ol>
+
+<p>A user CANNOT save invalid data to the database, according to the following
+rules:</p>
+<ol><li>
+<p>A user CANNOT sign up with an email (or username) that is already in use</p>
+</li><li>
+<p>A event title must be between 1 and 200 characters</p>
+</li></ol>
+
+<p>A user is authorized to perform certain actions on the site, according to
+the following rules:</p>
+<ol><li>
+<p>A user MUST be logged in to create/update/destroy resources</p>
+</li><li>
+<p>A user may only edit/delete their OWN event</p>
+</li></ol>
+
+<p> Entity Relationship Diagram</p>
+
+<p>I) <a href="User.html">User</a></p>
+<ul><li>
+<p>First Name</p>
+</li><li>
+<p>Last Name</p>
+</li><li>
+<p>Email</p>
+</li><li>
+<p>Password</p>
+</li><li>
+<p>has many</p>
+
+<pre class="ruby"><span class="ruby-operator">-</span> <span class="ruby-constant">Sport</span><span class="ruby-operator">-</span><span class="ruby-identifier">type</span>
+</pre>
+</li><li>
+<p>City_ID</p>
+</li></ul>
+
+<p>II) <a href="Event.html">Event</a></p>
+<ul><li>
+<p>Creator: user_id</p>
+</li><li>
+<p><a href="Sport.html">Sport</a> Type_id</p>
+</li><li>
+<p>Location</p>
+</li><li>
+<p>Start Time</p>
+</li><li>
+<p>Date:</p>
+</li><li>
+<p>Max headcount</p>
+</li><li>
+<p>Current Headcount</p>
+</li><li>
+<p>Description</p>
+</li><li>
+<p>City_id</p>
+</li><li>
+<p>has_many: users</p>
+</li></ul>
+
+<p>III) <a href="City.html">City</a></p>
+<ul><li>
+<p>Name:</p>
+</li><li>
+<p>has_many</p>
+
+<pre class="ruby"><span class="ruby-operator">-</span> <span class="ruby-identifier">users</span>
+   <span class="ruby-operator">-</span> <span class="ruby-identifier">events</span>
+</pre>
+</li></ul>
+
+<p>IV) <a href="Sport.html">Sport</a> type</p>
+<ul><li>
+<p>Name: String</p>
+</li><li>
+<p>Level: String</p>
+</li><li>
+<p>belongs_to:</p>
+
+<pre class="ruby"><span class="ruby-operator">-</span> <span class="ruby-constant">Event</span>
+<span class="ruby-operator">-</span> <span class="ruby-constant">User</span>
+</pre>
+</li></ul>
+
+<p>V) Logs</p>
+<ul><li>
+<p>joint table: belongs to <a href="User.html">User</a> and Events</p>
+</li><li>
+<p>data fields:</p>
+
+<pre>- User_id: int
+- Event_id: int
+- Action: string</pre>
+</li></ul>
+
+<p>API Used:</p>
+<ul><li>
+<p>Google map - API</p>
+</li></ul>
+
+<p>Libraries used:</p>
+<ul><li>
+<p>JQUERY</p>
+</li><li>
+<p>Boostrap</p>
+</li></ul>
+
+<p>Wishlist / Future Development:</p>
+<ul><li>
+<p>Ability to flag previous activity partners</p>
+</li><li>
+<p>Friends/sharing:</p>
+
+<pre>- ability to add friends, and only see friend&#39;s activity request
+- restrict activity request to inviting friends only
+- share URL of activity request via facebook or email with friends not signed up
+- invite friends to join site / log in via facebook</pre>
+</li><li>
+<p>Request administrator previleges</p>
+
+<pre>- originator of request can approve or deny quests to join from other users
+- originator of request can remove other participants</pre>
+</li><li>
+<p>Notification to users when request is filled/cancelled</p>
+
+<pre>- email notification  
+- ability to change notification settings</pre>
+</li><li>
+<p>Interaction with other Users with chat</p>
+
+<pre>- sending chats to friends / administors of requests 
+- delete messsages in inbox
+- receive notification when a message comes in</pre>
+</li><li>
+<p>Sorting activities by location, time and type</p>
+</li></ul>
+
+<p>Contributors:  Peter Hoang: <a
+href="https://github.com/Gnaoh">github.com/Gnaoh</a> Sharon Ji: <a
+href="https://github.com/SJ-2015">github.com/SJ-2015</a> James Bennington:
+<a href="https://github.com/jkbennington">github.com/jkbennington</a>
+Humberto Calero: <a
+href="https://github.com/altairn5">github.com/altairn5</a></p>
+
+<p><code>rake doc:app</code>.</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
