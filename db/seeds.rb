@@ -1,28 +1,56 @@
-City.create( name: "Austin")
-City.create( name: "Columbus")
-City.create( name: "Charlotte")
-City.create( name: "Chicago")
-City.create( name: "Baltimore")
-City.create( name: "Boston")
-City.create( name: "Dallas")
-City.create( name: "Denver")
-City.create( name: "Detroit")
-City.create( name: "El Paso")
-City.create( name: "Fort Worth")
-City.create( name: "Houston")
-City.create( name: "Indianapolis")
-City.create( name: "Jacksonville")
-City.create( name: "Los Angeles")
-City.create( name: "Memphis")
-City.create( name: "New York")
-City.create( name: "Philadelphia")
-City.create( name: "Phoenix")
-City.create( name: "San Antonio")
-City.create( name: "San Diego")
-City.create( name: "San Francisco")
-City.create( name: "San Jose")
-City.create( name: "Seattle")
+cities = City.create([
+{name: "Austin"},
+{name: "Columbus"},
+{name: "Charlotte"},
+{name: "Chicago"},
+{name: "Baltimore"},
+{name: "Boston"},
+{name: "Dallas"},
+{name: "Denver"},
+{name: "Detroit"},
+{name: "El Paso"},
+{name: "Fort Worth"},
+{name: "Houston"},
+{name: "Indianapolis"},
+{name: "Jacksonville"},
+{name: "Los Angeles"},
+{name: "Memphis"},
+{name: "New York"},
+{name: "Philadelphia"},
+{name: "Phoenix"},
+{name: "San Antonio"},
+{name: "San Diego"},
+{name: "San Francisco"},
+{name: "San Jose"},
+{name: "Seattle"},
+])
 
+# sports = Sport.create([
+#   {name: "Tennis",
+#   image_url: ""},
+#   {name: "Basketball",
+#   image_url: ""},
+#   {name: "Rockclimbing",
+#   image_url: ""},
+#   {name: "Golf",
+#   image_url: ""},
+#   {name: "Football",
+#   image_url: ""},
+#   {name: "Rugby",
+#   image_url: ""},
+#   {name: "Baseball",
+#   image_url: ""},
+#   {name: "Table Tennis",
+#   image_url: ""},
+#   {name: "Volleyball",
+#   image_url: ""},
+#   {name: "Cricket",
+#   image_url: ""},
+#   {name: "Hockey",
+#   image_url: ""},
+#   {name: "Soccer",
+#   image_url: ""},
+# ])
 
 Sport.create( name: "Tennis")
 Sport.create( name: "Basketball")
