@@ -1,0 +1,82 @@
+
+/*MODAL CSS*/
+
+.modal {
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1070;
+  outline: 0;
+}
+
+#loginModal .modal-dialog {
+  width: 460px;
+}
+
+#signupModal .modal-dialog {
+  width: 460px;
+}
+
+.modal.in .modal-dialog {
+  transform: translate(0, 0);
+}
+
+.modal.fade .modal-dialog {
+
+  transition: transform 0.3s ease-out;
+}
+
+.modal-dialog {
+  position: relative;
+}
+
+.flip-wrapper {
+  -webkit-perspective: 1300;
+}
+
+.flip.active {
+  position: relative;
+  display: block !important;
+  height: auto;
+  top: auto;
+  transform: rotateY(0deg);
+}
+
+.modal-content {
+  border-radius: 3px;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.2);
+  background-clip: padding-box;
+  outline: none;
+}
+
+.flip {
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+#loginModal .modal-body {
+  padding: 30px 50px;
+}
+
+#signupModal .modal-body {
+  padding: 30px 50px;
+}
+
+.modal-body {
+  position: relative;
+}
+
+#loginModal .header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#signupModal .header {
+  text-align: center;
+  margin-bottom: 20px;
+}

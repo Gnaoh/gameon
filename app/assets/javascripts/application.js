@@ -18,7 +18,6 @@
 //= require gmaps/google
 //= require jquery.mb.YTPlayer
 //= require instafeed
-//= require chat
 //= require notifications/loglist
 //= require instagram
 //= require map/gmap

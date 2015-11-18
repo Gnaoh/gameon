@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in?, only: [:show, :index]
   
-def index
+  def index
     @users = User.all
     render :index
   end
@@ -14,31 +14,39 @@ def index
   def create
     @user = User.new(user_params)
     if @user.save
-       login(@user)
-        flash[:notice] = "Please update your profile!"
-       redirect_to user_path(@user.id)
-    else
-      render :new
-    end
+     login(@user)
+     flash[:notice] = "Please update your profile!"
+     redirect_to user_path(@user.id)
+   else
+    render :new
   end
+end
 
-  def show
-    @user = User.find(params[:id])
-     if @user.events.any? 
-       @events = @user.events
-     else 
-       @events = []
-     end
-     
-     if (@user.attributes['city_id'] && !@user.events.blank?)
-      @local = @user.city.events.where(sport_id: @events.last.sport_id)
-     end
+def show
+  @user = User.find(params[:id])
+  if @user.events.any? 
+   @events = @user.events
+ else 
+   @events = []
+ end
+
+ if (@user.attributes['city_id'] && !@user.events.blank?)
+  @local = @user.city.events.where(sport_id: @events.last.sport_id)
+end
     # @similar = @local.where
     # @words = @
     @is_creator = Event.where(user_id: @user.id)
     @event = Event.all
+    
+    address_join = @events.map do|event|
+      event[:address]
+    end
+    address_host = @is_creator.map do|event|
+      event[:address]
+    end
+    @addresses = address_join + address_host
     @current_user = current_user
- 
+
   end
 
   def edit
@@ -63,10 +71,10 @@ def index
   def destroy
   end
 
-    private
+  private
 
   def user_params
-  params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :gender, :city_id, :avatar)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :age, :gender, :city_id, :avatar)
   end
   
 end

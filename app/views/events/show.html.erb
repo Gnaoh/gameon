@@ -72,7 +72,11 @@
 </div>
 <!-- call functions that displays map -->
 <script type="text/javascript">
+  var eventCity ='<%=@city.name%>'
+  console.log("this event city", eventCity)
   var eventPlace = '<%= @event.address %>';
-  renderMap(eventPlace,'event-map');
+   console.log("this the event place", eventPlace)
+  renderMap(eventCity,'event-map', eventPlace);
+
 </script>
 <!-- Displays map -->

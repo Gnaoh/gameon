@@ -135,7 +135,9 @@
 </div>
 
 <script type="text/javascript">
-  var city = 'San Francisco';
-  renderMap(city,'user-map');
+  var city = '<%=@user.city.name%>';
+  var addresses = <%=raw @addresses%>;
+
+  renderMap(city,'user-map', addresses);
  </script>
 
